@@ -1,0 +1,33 @@
+
+<ul>
+<% if user_signed_in? %>
+
+<h2> <%= link_to "Look at those fucking gossips", '/gossips' %> </h2>
+
+<li>
+	<%= link_to "Edit my account", edit_user_registration_path %>
+</li>
+
+<li>
+	<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+</li>
+
+<li>
+	<%= current_user.email %>
+</li>
+
+<% else %>
+<li>
+	<%= link_to "sign in", new_user_session_path %>
+</li>
+<li>
+	<%= link_to "sign up", new_user_registration_path %>
+</li>
+
+<% end %>
+</ul>
+
+
+
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
